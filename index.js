@@ -39,8 +39,8 @@ if (ShapeTracker) {
         plan_id = selectedPlan.plan_id;
       })
 
-    console.log("Found plan_id ${plan_id}")
-    fetch("schedules/schedule_${plan_id}.json")
+    console.log(`Found plan_id ${plan_id}`)
+    fetch(`schedules/schedule_${plan_id}.json`)
     .then(response => response.json())
     .then(fnd_schedule => {
       schedule = fnd_schedule
