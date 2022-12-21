@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function loadData() {
         // Load the ShapeTracker object from local storage
         const ShapeTracker = JSON.parse(localStorage.getItem("ShapeTracker"));
+        console.log(ShapeTracker)
     
         // Display the user's name, age, and weight in the top banner
         const topBanner = document.getElementById("top-banner");
