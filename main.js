@@ -1,3 +1,13 @@
+
+// Get the instances of each element
+const todayLink = document.getElementById("today");
+const addLink = document.getElementById("add");
+const progressLink = document.getElementById("progress");
+const exportLink = document.getElementById("export");
+const importLink = document.getElementById("import");
+
+
+
 // Load the user's data and display it on the page
 function loadData() {
     // Load the ShapeTracker object from local storage
@@ -115,11 +125,28 @@ function importData() {
   }
   
 // Add event listeners to the menu options
-document.getElementById("today").addEventListener("click", loadData);
-document.getElementById("add").addEventListener("click", addWeight);
-document.getElementById("progress").addEventListener("click", viewProgress);
-document.getElementById("export").addEventListener("click", exportData);
-document.getElementById("import").addEventListener("click", importData);
+
+// Add event listeners to the menu options
+todayLink.addEventListener("click", function(e) {
+    e.preventDefault();
+    loadData();
+  });
+  addLink.addEventListener("click", function(e) {
+    e.preventDefault();
+    addWeight();
+  });
+  progressLink.addEventListener("click", function(e) {
+    e.preventDefault();
+    viewProgress();
+  });
+  exportLink.addEventListener("click", function(e) {
+    e.preventDefault();
+    exportData();
+  });
+  importLink.addEventListener("click", function(e) {
+    e.preventDefault();
+    importData();
+  });
 
 // Load the data on page load
 loadData();
