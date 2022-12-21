@@ -1,4 +1,6 @@
-# LooseWeightTracker
+<img src="WeightLossApp.png" alt="ShapeTracker" width="50"/>
+
+# ShapeTracker
 A web app to loose weight and track your progress over time.
 
 ## Introduction 
