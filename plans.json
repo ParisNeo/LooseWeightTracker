@@ -1,0 +1,22 @@
+[
+    {
+      "plan_name": "Weight Loss",
+      "plan_description": "This plan is designed for those looking to lose weight. It includes a mix of cardio and strength training exercises to help you burn calories and build muscle."
+    },
+    {
+      "plan_name": "Weight Maintenance",
+      "plan_description": "This plan is designed for those looking to maintain their current weight. It includes a mix of cardio and strength training exercises to help you stay active and healthy."
+    },
+    {
+      "plan_name": "Gain Muscle",
+      "plan_description": "This plan is designed for those looking to gain muscle mass. It includes a mix of strength training exercises to help you build muscle and increase strength."
+    },
+    {
+      "plan_name": "Strength Training",
+      "plan_description": "This plan is designed for those looking to increase their overall strength. It includes a variety of strength training exercises to help you build muscle and increase strength."
+    },
+    {
+      "plan_name": "Cardio Training",
+      "plan_description": "This plan is designed for those looking to improve their cardiovascular endurance. It includes a variety of cardio exercises to help you increase your endurance and burn calories."
+    }
+  ]
