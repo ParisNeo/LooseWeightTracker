@@ -32,16 +32,10 @@ if (ShapeTracker) {
     var schedule = {};
     
     fetch("plans.json")
-      .then(response => response.json())
-      .then(plans => {
-        const selectedPlan = plans.find(pln => pln.plan_name === plan);
-        plan_id = selectedPlan.plan_id;
-    })
-    fetch("plans.json")
     .then(response => response.json())
     .then(plans => {
       const selectedPlan = plans.find(plan => plan.plan_name === planSelect.value);
-      planInfoDiv.innerHTML = selectedPlan.plan_description;
+      plan_id = selectedPlan.plan_id;
     })
 
     console.log(`Found plan ${planSelect.value}`)
