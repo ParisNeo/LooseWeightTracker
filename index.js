@@ -79,6 +79,8 @@ if (ShapeTracker) {
       .then(plans => {
         const selectedPlan = plans.find(plan => plan.plan_name === e.target.value);
         planInfoDiv.innerHTML = selectedPlan.plan_description;
+      }).catch(reason=>{
+        console.log(reason);
       })
   });
   // If the ShapeTracker object already exists in local storage, redirect to the main page on page load
