@@ -28,7 +28,6 @@ if (ShapeTracker) {
     const name = document.getElementById("name").value;
     const birthdate = document.getElementById("birthdate").value;
     const weight = document.getElementById("weight").value;
-    const plan = document.getElementById("plan").value;
     var plan_id = 0;
     var schedule = {};
     
@@ -37,7 +36,15 @@ if (ShapeTracker) {
       .then(plans => {
         const selectedPlan = plans.find(pln => pln.plan_name === plan);
         plan_id = selectedPlan.plan_id;
-      })
+    })
+    fetch("plans.json")
+    .then(response => response.json())
+    .then(plans => {
+      const selectedPlan = plans.find(plan => plan.plan_name === planSelect.value);
+      planInfoDiv.innerHTML = selectedPlan.plan_description;
+    })
+
+    console.log(`Found plan ${planSelect.value}`)
 
     console.log(`Found plan_id ${plan_id}`)
     fetch(`schedules/schedule_${plan_id}.json`)
@@ -71,10 +78,14 @@ if (ShapeTracker) {
   
   form.addEventListener("submit", e => {
     const weight = document.getElementById("weight").value;
+    const birthdate = document.getElementById("birthdate").value;
     e.preventDefault();
     if (weight <= 0 || weight === "") {
       alert("Please enter a valid weight value");
-    }    
+    }
+    else if (birthdate===""){
+      alert("Please enter a valid birthdate value");
+    }
     else{
       startTracking();
     }
