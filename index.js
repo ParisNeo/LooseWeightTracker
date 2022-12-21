@@ -35,6 +35,7 @@ if (ShapeTracker) {
     .then(response => response.json())
     .then(plans => {
       const selectedPlan = plans.find(plan => plan.plan_name === planSelect.value);
+      console.log(`Found plan ${selectedPlan}`)
       plan_id = selectedPlan.plan_id;
     })
 
