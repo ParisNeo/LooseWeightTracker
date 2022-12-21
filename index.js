@@ -3,7 +3,7 @@ const ShapeTracker = JSON.parse(localStorage.getItem("ShapeTracker"));
 
 if (ShapeTracker) {
   // ShapeTracker object is found, redirect to index page
-  window.location.href = "index.html";
+  window.location.href = "main.html";
 } else {
   const form = document.getElementById("form");
   const planSelect = document.getElementById("plan");
