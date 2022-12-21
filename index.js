@@ -29,6 +29,24 @@ if (ShapeTracker) {
     const age = document.getElementById("age").value;
     const weight = document.getElementById("weight").value;
     const plan = document.getElementById("plan").value;
+    var plan_id = 0;
+    var schedule = {};
+    
+    fetch("plans.json")
+      .then(response => response.json())
+      .then(plans => {
+        const selectedPlan = plans.find(plan => plan.plan_name === e.target.value);
+        plan_id = selectedPlan.plan_id;
+      })
+
+    console.log("Found plan_id ${plan_id}")
+    fetch("schedules/schedule_${plan_id}.json")
+    .then(response => response.json())
+    .then(fnd_schedule => {
+      schedule = fnd_schedule
+    })
+    console.log("Found schedule ${schedule}")
+
   
     // Create the ShapeTracker object
     const ShapeTracker = {
@@ -36,7 +54,9 @@ if (ShapeTracker) {
       age: age,
       weight: weight,
       plan: plan,
-      weights: []
+      weights: [],
+      schedule:schedule
+
     };
   
     // Save the ShapeTracker object to local storage
