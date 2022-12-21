@@ -67,18 +67,17 @@ if (ShapeTracker) {
     // Redirect to the main page
     //window.location.href = "main.html";
   }
+ 
   
-  form.onsubmit = function(event) {
-    const weight = document.getElementById("weight").value;
-    if (weight <= 0 || weight === "") {
-      event.preventDefault();
-      alert("Please enter a valid weight value");
-    }
-  };
-
   form.addEventListener("submit", e => {
+    const weight = document.getElementById("weight").value;
     e.preventDefault();
-    startTracking();
+    if (weight <= 0 || weight === "") {
+      alert("Please enter a valid weight value");
+    }    
+    else{
+      startTracking();
+    }
   });
   
   
