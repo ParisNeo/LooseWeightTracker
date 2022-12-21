@@ -68,6 +68,14 @@ if (ShapeTracker) {
     //window.location.href = "main.html";
   }
   
+  form.onsubmit = function(event) {
+    const weight = document.getElementById("weight").value;
+    if (weight <= 0 || weight === "") {
+      event.preventDefault();
+      alert("Please enter a valid weight value");
+    }
+  };
+
   form.addEventListener("submit", e => {
     e.preventDefault();
     startTracking();

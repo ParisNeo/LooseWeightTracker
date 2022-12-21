@@ -52,3 +52,13 @@ body {
   #plan-info {
     margin-top: 20px;
   }
+
+  .input-field {
+    width: 250px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0 10px;
+    font-size: 16px;
+    /* Add other styling here */
+  }
