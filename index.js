@@ -63,7 +63,7 @@ if (ShapeTracker) {
     localStorage.setItem("ShapeTracker", JSON.stringify(ShapeTracker));
   
     // Redirect to the main page
-    window.location.href = "main.html";
+    //window.location.href = "main.html";
   }
   
   form.addEventListener("submit", e => {
