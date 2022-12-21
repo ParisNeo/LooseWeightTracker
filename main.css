@@ -1,3 +1,6 @@
+html, body {
+  height: 100%;
+}
 #top-banner {
     background-color: #333;
     color: #fff;
@@ -6,6 +9,7 @@
   }
   
   #left-panel {
+    height: 100%;
     width: 200px;
     float: left;
     background-color: #eee;
@@ -22,4 +26,47 @@
     color: #fff;
     text-align: center;
     padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;    
+  }
+  #left-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    overflow: auto;
+  }
+  
+  #left-panel ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #left-panel ul li {
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  #left-panel ul li a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    padding: 0 20px;
+  }
+  
+  #left-panel ul li a:hover {
+    background-color: #f5f5f5;
+  }  
+
+  li {
+    min-height: 50px;
+  }
+  
+  li:hover {
+    background-color: lightgray;
+    border-radius: 10px;
   }
