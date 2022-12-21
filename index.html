@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ShapeTracker</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <h1>Welcome to ShapeTracker</h1>
+    <p>Enter your information to get started:</p>
+    <div class="form-container">
+    <form id="form">
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name"><br>
+      <label for="age">Age:</label><br>
+      <input type="number" id="age" name="age"><br>
+      <label for="weight">Weight:</label><br>
+      <input type="number" id="weight" name="weight"><br>
+      <br>
+      <label for="plan">Select a weight loss plan:</label><br>
+      <select id="plan" name="plan">
+        <option value="weight-loss">Weight Loss</option>
+        <option value="weight-maintenance">Weight Maintenance</option>
+        <option value="gain-muscle">Gain Muscle</option>
+      </select>
+      <br><br>
+      <input type="submit" value="Submit">
+    </form> 
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
