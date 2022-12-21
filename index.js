@@ -41,3 +41,9 @@ planSelect.addEventListener("change", e => {
       planInfoDiv.innerHTML = selectedPlan.plan_description;
     })
 });
+// If the ShapeTracker object already exists in local storage, redirect to the main page on page load
+window.addEventListener("load", () => {
+    if (ShapeTracker.plan) {
+      window.location.href = "main.html";
+    }
+  });
