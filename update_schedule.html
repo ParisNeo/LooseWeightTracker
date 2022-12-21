@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Update Schedule</title>
+  <style>
+    /* Add some styling to the page */
+    body {
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      text-align: center;
+    }
+    form {
+      width: 500px;
+      margin: 0 auto;
+    }
+    label {
+      display: block;
+      margin: 10px 0;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Update Schedule</h1>
+  <form id="schedule-form"></form>
+  <script>
+    // Get the plan ID from the URL query string
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const planId = urlParams.get("plan_id");
+
+    // Fetch the schedule data for the selected plan
+    fetch(`schedules/schedule_${planId}.json`)
+      .then(response => response.json())
+      .then(schedule => {
+        // Get the form element
+        const form = document.getElementById("schedule-form");
+
+        // Loop through the days in the schedule and create form fields for each one
+        for (const day in schedule) {
+          const dayGroup = document.createElement("div");
+
+          // Create a label for the day
+          const dayLabel = document.createElement("label");
+          dayLabel.innerHTML = day;
+          dayGroup.appendChild(dayLabel);
+
+          // Loop through the activities in the day and create form fields for each one
+          for (const activity in schedule[day]) {
+            const activityGroup = document.createElement("div");
+
+            // Create a label for the activity
+            const activityLabel = document.createElement("label");
+            activityLabel.innerHTML = activity;
+            activityGroup.appendChild(activityLabel);
+
+            // Create a text input for the start time
+            const startInput = document.createElement("input");
+            startInput.type = "text";
+            startInput.name = `${day}_${activity}_start`;
+            startInput.value = schedule[day][activity]["start"];
+            activityGroup.appendChild(startInput);
+
+            // Create a text input for the end time
+            const endInput = document.createElement("input");
+            endInput.type = "text";
+            endInput.name = `${day}_${activity}_end`;
+            endInput.value = schedule[day][activity]["end"];
+            activityGroup.appendChild(endInput);
+
+            dayGroup.appendChild(activityGroup);
+          }
+
+          form.appendChild(dayGroup);
+        }
+    }
+    );

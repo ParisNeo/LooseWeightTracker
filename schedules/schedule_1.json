@@ -1,0 +1,306 @@
+{
+  "plan_id": "1",
+  "days": [
+    {
+      "day": "Monday",
+      "meals": [
+        {
+          "name": "Breakfast",
+          "description": "Scrambled eggs with spinach and whole grain toast",
+          "start_time": "07:00",
+          "end_time": "07:30"
+        },
+        {
+          "name": "Lunch",
+          "description": "Grilled chicken salad with mixed greens and vinaigrette dressing",
+          "start_time": "12:00",
+          "end_time": "12:30"
+        },
+        {
+          "name": "Dinner",
+          "description": "Baked salmon with roasted vegetables",
+          "start_time": "18:00",
+          "end_time": "18:30"
+        }
+      ],
+      "activity": [
+        {
+          "name": "Warm up with 5 minute jog",
+          "duration": 5,
+          "start_time": "09:00",
+          "end_time": "09:05"
+        },
+        {
+          "name": "30 minutes of strength training",
+          "duration": 30,
+          "start_time": "09:30",
+          "end_time": "10:00"
+        }
+      ],
+      "sleep": [
+        {
+          "start_time": "22:00",
+          "end_time": "07:00"
+        }
+      ]
+    },
+    {
+      "day": "Tuesday",
+      "meals": [
+        {
+          "name": "Breakfast",
+          "description": "Oatmeal with berries and nuts",
+          "start_time": "07:00",
+          "end_time": "07:30"
+        },
+        {
+          "name": "Lunch",
+          "description": "Turkey and avocado wrap with mixed greens",
+          "start_time": "12:00",
+          "end_time": "12:30"
+        },
+        {
+          "name": "Dinner",
+          "description": "Quinoa and black bean stir fry with vegetables",
+          "start_time": "18:00",
+          "end_time": "18:30"
+        }
+      ],
+      "activity": [
+        {
+          "name": "Warm up with 5 minute jog",
+          "duration": 5,
+          "start_time": "09:00",
+          "end_time": "09:05"
+        },
+        {
+          "name": "30 minutes of cardio",
+          "duration": 30,
+          "start_time": "09:30",
+          "end_time": "10:00"   
+        },
+      ],
+      "sleep": [
+        {
+          "start_time": "22:00",
+          "end_time": "07:00"
+        }
+      ]
+    },
+    {
+      "day": "Wednesday",
+      "meals": [
+        {
+          "name": "Breakfast",
+          "description": "Greek yogurt with berries and nuts",
+          "start_time": "07:00",
+          "end_time": "07:30"
+        },
+        {
+          "name": "Lunch",
+          "description": "Tuna salad with mixed greens and whole grain crackers",
+          "start_time": "12:00",
+          "end_time": "12:30"
+        },
+        {
+          "name": "Dinner",
+          "description": "Grilled vegetables with quinoa",
+          "start_time": "18:00",
+          "end_time": "18:30"
+        }
+      ],
+      "activity": [
+        {
+          "name": "Warm up with 5 minute jog",
+          "duration": 5,
+          "start_time": "09:00",
+          "end_time": "09:05"
+        },
+        {
+          "name": "30 minutes of strength training",
+          "duration": 30,
+          "start_time": "09:30",
+          "end_time": "10:00"
+        }
+      ],
+      "sleep": [
+        {
+          "start_time": "22:00",
+          "end_time": "07:00"
+        }
+      ]
+    },
+    {
+      "day": "Thursday",
+      "meals": [
+        {
+          "name": "Breakfast",
+          "description": "Egg white omelette with spinach and whole grain toast",
+          "start_time": "07:00",
+          "end_time": "07:30"
+        },
+        {
+          "name": "Lunch",
+          "description": "Grilled chicken and vegetable skewers with quinoa",
+          "start_time": "12:00",
+          "end_time": "12:30"
+        },
+        {
+          "name": "Dinner",
+          "description": "Roasted salmon with sweet potato and broccoli",
+          "start_time": "18:00",
+          "end_time": "18:30"
+        }
+      ],
+      "activity": [
+        {
+          "name": "Warm up with 5 minute jog",
+          "duration": 5,
+          "start_time": "09:00",
+          "end_time": "09:05"
+        },
+        {
+          "name": "30 minutes of cardio",
+          "duration": 30,
+          "start_time": "09:30",
+          "end_time": "10:00"
+        }
+      ],
+      "sleep": [
+        {
+          "start_time": "22:00",
+          "end_time": "07:00"
+        }
+      ]
+    },
+    {
+      "day": "Friday",
+      "meals": [
+        {
+          "name": "Breakfast",
+          "description": "Oatmeal with nuts and dried fruit",
+          "start_time": "07:00",
+          "end_time": "07:30"
+        },
+        {
+          "name": "Lunch",
+          "description": "Turkey and avocado wrap with mixed greens",
+          "start_time": "12:00",
+          "end_time": "12:30"
+        },
+        {
+          "name": "Dinner",
+          "description": "Grilled tofu with roasted vegetables and quinoa",
+          "start_time": "18:00",
+          "end_time": "18:30"
+        }
+      ],
+      "activity": [
+        {
+          "name": "Warm up with 5 minute jog",
+          "duration": 5,
+          "start_time": "09:00",
+          "end_time": "09:05"
+        },
+        {
+          "name": "30 minutes of strength training",
+          "duration": 30,
+          "start_time": "09:30",
+          "end_time": "10:00"
+        }
+      ],
+      "sleep": [
+        {
+          "start_time": "22:00",
+          "end_time": "07:00"
+        }
+      ]
+    },
+    {
+      "day": "Saturday",
+      "meals": [
+        {
+          "name": "Breakfast",
+          "description": "Scrambled eggs with whole grain toast and fruit",
+          "start_time": "07:00",
+          "end_time": "07:30"
+        },
+        {
+          "name": "Lunch",
+          "description": "Chicken and quinoa salad with mixed greens",
+          "start_time": "12:00",
+          "end_time": "12:30"
+        },
+        {
+          "name": "Dinner",
+          "description": "Stir fry with vegetables and tofu",
+          "start_time": "18:00",
+          "end_time": "18:30"
+        }
+      ],
+      "activity": [
+        {
+          "name": "Warm up with 5 minute jog",
+          "duration": 5,
+          "start_time": "09:00",
+          "end_time": "09:05"
+        },
+        {
+          "name": "30 minutes of yoga",
+          "duration": 30,
+          "start_time": "09:30",
+          "end_time": "10:00"
+        }
+      ],
+      "sleep": [
+        {
+          "start_time": "22:00",
+          "end_time": "07:00"
+        }
+      ]
+    },
+    {
+      "day": "Sunday",
+      "meals": [
+        {
+          "name": "Breakfast",
+          "description": "Smoothie bowl with berries and nuts",
+          "start_time": "07:00",
+          "end_time": "07:30"
+        },
+        {
+          "name": "Lunch",
+          "description": "Taco salad with ground turkey and avocado",
+          "start_time": "12:00",
+          "end_time": "12:30"
+        },
+        {
+          "name": "Dinner",
+          "description": "Grilled chicken with roasted vegetables and brown rice",
+          "start_time": "18:00",
+          "end_time": "18:30"
+        }
+      ],
+      "activity": [
+        {
+          "name": "Warm up with 5 minute jog",
+          "duration": 5,
+          "start_time": "09:00",
+          "end_time": "09:05"
+        },
+        {
+          "name": "30 minutes of cardio",
+          "duration": 30,
+          "start_time": "09:30",
+          "end_time": "10:00"
+        }
+      ],
+      "sleep": [
+        {
+          "start_time": "22:00",
+          "end_time": "07:00"
+        }
+      ]
+    }
+  ]
+}
