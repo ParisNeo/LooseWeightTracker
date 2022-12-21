@@ -66,7 +66,7 @@ if (ShapeTracker) {
       fetch("plans.json")
       .then(response => response.json())
       .then(plans => {
-        const selectedPlan = plans.find(plan => plan.plan_name === e.target.value);
+        const selectedPlan = plans.find(plan => plan.plan_name === planSelect.value);
         planInfoDiv.innerHTML = selectedPlan.plan_description;
       })
     });
