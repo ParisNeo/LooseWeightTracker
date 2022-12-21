@@ -45,7 +45,7 @@ if (ShapeTracker) {
     .then(fnd_schedule => {
       schedule = fnd_schedule
     })
-    console.log("Found schedule ${schedule}")
+    console.log(`Found schedule ${schedule}`)
 
   
     // Create the ShapeTracker object
