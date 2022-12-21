@@ -1,3 +1,9 @@
+function deleteAllData() {
+    if (confirm("Are you sure you want to delete all data? This action cannot be undone.")) {
+      localStorage.clear();
+      window.location.href = "index.html";
+    }
+  }
 // Wait until the DOM is ready
 document.addEventListener("DOMContentLoaded", function() {
     // Get the instances of each element
