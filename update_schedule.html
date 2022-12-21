@@ -44,6 +44,7 @@
     const planId = urlParams.get("plan_id");
 
     // Fetch the schedule data for the selected plan
+    console.log("Loading schedules/schedule_${planId}.json")
     fetch(`schedules/schedule_${planId}.json`)
       .then(response => response.json())
       .then(schedule => {
@@ -87,5 +88,8 @@
 
           form.appendChild(dayGroup);
         }
-    }
-    );
+      }
+      ).catch(error => {
+      // Handle the error
+      console.error(error);
+  });
