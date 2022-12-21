@@ -26,7 +26,7 @@ if (ShapeTracker) {
   function startTracking() {
     // Get the form values
     const name = document.getElementById("name").value;
-    const age = document.getElementById("age").value;
+    const birthdate = document.getElementById("birthdate").value;
     const weight = document.getElementById("weight").value;
     const plan = document.getElementById("plan").value;
     var plan_id = 0;
@@ -51,7 +51,7 @@ if (ShapeTracker) {
     // Create the ShapeTracker object
     const ShapeTracker = {
       name: name,
-      age: age,
+      birthdate: birthdate,
       weight: weight,
       plan: plan,
       weights: [],
