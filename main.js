@@ -21,10 +21,25 @@ document.addEventListener("DOMContentLoaded", function() {
         const ShapeTracker = JSON.parse(localStorage.getItem("ShapeTracker"));
         console.log(ShapeTracker)
     
+
+        const birthDate = ShapeTracker.birthDate;
+
+        // Convert the birth date to a Date object
+        const birthDateObject = new Date(birthDate);
+
+        // Get the birth year
+        const birthYear = birthDateObject.getFullYear();
+
+        // Get the current year
+        const currentYear = new Date().getFullYear();
+
+        // Calculate the age
+        const age = currentYear - birthYear;
+
         // Display the user's name, age, and weight in the top banner
         const topBanner = document.getElementById("top-banner");
         topBanner.innerHTML = `<h1>Welcome, ${ShapeTracker.name}!</h1>
-                            <p>Age: ${ShapeTracker.age}</p>
+                            <p>Age: ${age}</p>
                             <p>Weight: ${ShapeTracker.weight}</p>`;
     
         // Display the user's schedule in the center panel
