@@ -48,7 +48,6 @@ if (ShapeTracker) {
   
   form.addEventListener("submit", e => {
     e.preventDefault();
-  
     startTracking();
   });
   
@@ -70,10 +69,6 @@ if (ShapeTracker) {
         const selectedPlan = plans.find(plan => plan.plan_name === e.target.value);
         planInfoDiv.innerHTML = selectedPlan.plan_description;
       })
-  
-      if (ShapeTracker.plan) {
-        window.location.href = "main.html";
-      }
     });
 
 }
