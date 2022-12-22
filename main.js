@@ -23,8 +23,8 @@ document.addEventListener("DOMContentLoaded", function() {
         const randomIndex = Math.floor(Math.random() * schedule.advice.length);
         const randomAdvice = schedule.advice[randomIndex];
         console.log(randomAdvice)
-        console.log(ShapeTracker)
     
+        /*
         const centerPanel = document.getElementById("center-panel");
         const adviceDiv = document.getElementById("advise-div");
         const advicecontentDiv = document.getElementById("advise-content");
@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
         closeButton.addEventListener("click", () => {
             adviceDiv.style.visibility=false;
           });
+          */
 
         const birthDate = ShapeTracker.birthdate;
 
