@@ -30,6 +30,17 @@ document.addEventListener("DOMContentLoaded", function() {
         adviceDiv.id = "advice-div";
         adviceDiv.classList.add("advice-div");
         centerPanel.appendChild(adviceDiv);
+        const closeButton = document.createElement("button");
+        closeButton.innerHTML = "X";
+        closeButton.classList.add("close-button");
+        adviceDiv.appendChild(closeButton);
+        closeButton.addEventListener("click", () => {
+            centerPanel.removeChild(adviceDiv);
+          });
+        adviceDiv.style.position = "absolute";
+        adviceDiv.style.bottom = "0";
+        adviceDiv.style.zIndex = "999";
+
 
         const birthDate = ShapeTracker.birthdate;
 
