@@ -20,15 +20,14 @@ body {
     text-align: left;
   }
   
-  input[type="text"], input[type="number"] {
+  input[type="text"], input[type="number"], input[type="date"], select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
-  }
-  input[type="text"], input[type="number"], select {
+    width:100%;
     background-color: #444;
     border-color: #555;
     color: #fff;
@@ -49,7 +48,7 @@ body {
   }
   
   select {
-    width: 200px;
+    width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
