@@ -19,16 +19,27 @@ document.addEventListener("DOMContentLoaded", function() {
         // Display the user's schedule in the center panel
         // Get the current day of the week as a number (0 for Sunday, 1 for Monday, etc.)
         const today = new Date().getDay();
+        const currentDaySchedule = ShapeTracker.schedule.days.find(day => day.day === currentDay);
+        let tableHTML = '<table>';
 
-        // Access the schedule for today
-        const todaySchedule = schedule.days[today];
+        for (const activity of currentDaySchedule.activities) {
+            tableHTML += `<tr><td>${activity.time}</td><td>${activity.name}</td></tr>`;
+        }
+        const currentTime = new Date().getTime();
 
-        // You can then access the different parts of the schedule for today, such as the meals, activities, and sleep
-        const meals = todaySchedule.meals;
-        const activities = todaySchedule.activity;
-        const sleep = todaySchedule.sleep;
+        for (const activity of currentDaySchedule.activities) {
+          if (currentTime < activity.time) {
+            // This is the next activity, so you can highlight it in the table
+            tableHTML = tableHTML.replace(`<tr><td>${activity.time}</td><td>${activity.name}</td></tr>`,
+                                          `<tr><td>${activity.time}</td><td><strong>${activity.name}</strong></td></tr>`);
+            break;
+          }
+        }        
+
+        tableHTML += '</table>';
+        
         content.innerHTML = `<h2>Today's Schedule</h2>
-                                <p>${ShapeTracker.schedule}</p>`;
+                              ${tableHTML}`;
     }
 
     // Load the user's data and display it on the page
