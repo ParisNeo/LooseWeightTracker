@@ -62,7 +62,7 @@ header {
   #left-panel ul li a {
     display: block;
     text-decoration: none;
-    color: #333;
+    color: #fff;
     padding: 0 20px;
   }
   
@@ -78,7 +78,7 @@ header {
     background-color: lightgray;
     border-radius: 10px;
   }
-  .advice-div {
+  #advice-div {
     position: fixed; /* This will make the div stay in the same place even when the page is scrolled */
     bottom: 0; /* This will position the div at the bottom of the screen */
     left: 50%; /* This will position the div horizontally centered on the screen */
@@ -89,7 +89,7 @@ header {
     z-index: 999; /* This will make the div show on top of everything else on the page */
   }
   
-  .close-button {
+  #close-button {
     position: absolute; /* This will position the button relative to the parent element (the advice div) */
     top: 0; /* This will position the button at the top of the advice div */
     right: 0; /* This will position the button at the right of the advice div */
