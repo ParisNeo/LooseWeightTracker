@@ -75,3 +75,9 @@ body {
     font-size: 16px;
     /* Add other styling here */
   }
+
+  @media (max-width: 500px) {
+    body {
+      font-size: larger;
+    }
+  }
