@@ -51,6 +51,10 @@ if (ShapeTracker) {
     
       // Save the ShapeTracker object to local storage
       localStorage.setItem("ShapeTracker", JSON.stringify(ShapeTracker));
+      
+      // Redirect to the main page
+      window.location.href = "main.html";
+
       }).catch(reason=>{
         alert("Something went wrong. Couldn't find the schedule for the plan you specified")
         return
@@ -63,8 +67,7 @@ if (ShapeTracker) {
 
 
   
-    // Redirect to the main page
-    window.location.href = "main.html";
+
   }
  
   
