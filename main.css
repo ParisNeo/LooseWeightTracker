@@ -82,14 +82,16 @@ header {
     border-radius: 10px;
   }
   #advise-div {
-    background-color: yellow;
+    background-color: #333;
     width: 500px;
     height: 300px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     position: fixed; /* This will make the div stay in the same place even when the page is scrolled */
     bottom: 0; /* This will position the div at the bottom of the screen */
     left: 50%; /* This will position the div horizontally centered on the screen */
     transform: translate(-50%, 0); /* This will adjust the position of the div so that it is truly centered on the screen */
-    background-color: white; /* This sets the background color of the div */
     border: 1px solid black; /* This adds a border around the div */
     padding: 20px; /* This adds some padding around the content inside the div */
     z-index: 999; /* This will make the div show on top of everything else on the page */
