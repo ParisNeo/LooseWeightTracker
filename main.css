@@ -81,6 +81,7 @@ header {
     border-radius: 10px;
   }
   #advice-div {
+    background-color: yellow;
     position: fixed; /* This will make the div stay in the same place even when the page is scrolled */
     bottom: 0; /* This will position the div at the bottom of the screen */
     left: 50%; /* This will position the div horizontally centered on the screen */
