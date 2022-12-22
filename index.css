@@ -1,9 +1,13 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
+    background-color: #333;
+    color: #fff;
   }
   
   .form-container {
+    background-color: #444;
+    border-color: #555;    
     display: inline-block;
     text-align: left;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -24,10 +28,14 @@ body {
     border: 2px solid #ccc;
     border-radius: 4px;
   }
-  
+  input[type="text"], input[type="number"], select {
+    background-color: #444;
+    border-color: #555;
+    color: #fff;
+  }
   input[type="submit"] {
     width: 100px;
-    background-color: #4CAF50;
+    background-color: #555;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -37,7 +45,7 @@ body {
   }
   
   input[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: #666;
   }
   
   select {
@@ -50,13 +58,19 @@ body {
   }
   
   #plan-info {
+    background-color: #444;
+    border-color: #555;
+    color: #fff;    
     margin-top: 20px;
   }
 
   .input-field {
+    background-color: #444;
+    border-color: #555;
+    color: #fff;
     width: 250px;
     height: 40px;
-    border: 1px solid #ccc;
+    border: 1px solid;
     border-radius: 5px;
     padding: 0 10px;
     font-size: 16px;

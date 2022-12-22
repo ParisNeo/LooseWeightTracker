@@ -27,8 +27,10 @@ document.addEventListener("DOMContentLoaded", function() {
     
         const centerPanel = document.getElementById("center-panel");
         const adviceDiv = document.getElementById("advise-div");
+        const advicecontentDiv = document.getElementById("advise-content");
+        
         const closeButton = document.getElementById("close-button");
-        centerPanel.innerHTML = randomAdvice
+        advicecontentDiv.innerHTML = randomAdvice
         closeButton.addEventListener("click", () => {
             adviceDiv.style.visibility=false;
           });
