@@ -302,5 +302,12 @@
         }
       ]
     }
-  ]
+  ],
+  "advice": [
+    "Drink plenty of water throughout the day to stay hydrated.",
+    "Try to get at least 7-9 hours of sleep each night to help your body recover and stay energized.",
+    "Incorporate strength training into your workouts to build muscle and boost your metabolism.",
+    "Make sure to eat a variety of nutrient-rich foods, including fruits, vegetables, whole grains, and lean proteins.",
+    "Try to minimize your intake of processed and sugary foods, which can be high in empty calories and low in nutrients."
+    ]
 }
