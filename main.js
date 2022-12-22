@@ -19,8 +19,17 @@ document.addEventListener("DOMContentLoaded", function() {
     function loadData() {
         // Load the ShapeTracker object from local storage
         const ShapeTracker = JSON.parse(localStorage.getItem("ShapeTracker"));
+        const schedule = ShapeTracker.schedule;
+        const randomIndex = Math.floor(Math.random() * schedule.advice.length);
+        const randomAdvice = schedule.advice[randomIndex];
+        document.getElementById("advice").innerHTML = randomAdvice;
         console.log(ShapeTracker)
     
+        const centerPanel = document.getElementById("center-panel");
+        const adviceDiv = document.createElement("div");
+        adviceDiv.id = "advice-div";
+        adviceDiv.classList.add("advice-div");
+        centerPanel.appendChild(adviceDiv);
 
         const birthDate = ShapeTracker.birthdate;
 
@@ -43,7 +52,6 @@ document.addEventListener("DOMContentLoaded", function() {
                             <p>Weight: ${ShapeTracker.weight}</p>`;
     
         // Display the user's schedule in the center panel
-        const centerPanel = document.getElementById("center-panel");
         centerPanel.innerHTML = `<h2>Today's Schedule</h2>
                                 <p>${ShapeTracker.schedule}</p>`;
     }
