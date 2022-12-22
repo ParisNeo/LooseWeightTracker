@@ -38,39 +38,41 @@ if (ShapeTracker) {
       const selectedPlan = plans.find(plan => plan.plan_name === planSelect.value);
       console.log(`Found plan ${selectedPlan}`)
       plan_id = selectedPlan.plan_id;
+      console.log(`Found plan -> ${planSelect.value}`)
+
+      console.log(`Found plan_id ${plan_id}`)
+      fetch(`schedules/schedule_${plan_id}.json`)
+      .then(response => response.json())
+      .then(fnd_schedule => {
+        schedule = fnd_schedule
+        console.log(`Found schedule ${schedule}`)
+  
+    
+      // Create the ShapeTracker object
+      const ShapeTracker = {
+        name: name,
+        birthdate: birthdate,
+        weight: weight,
+        plan: plan,
+        weights: [],
+        schedule:schedule
+      };
+    
+      // Save the ShapeTracker object to local storage
+      localStorage.setItem("ShapeTracker", JSON.stringify(ShapeTracker));
+      }).catch(reason=>{
+        console.log(reason);
+        alert("Something went wrong. Couldn't find the schedule for the plan you specified")
+        return
+      })
+      
     }).catch(reason => {
       console.log(reason)
       alert("Something went wrong. Couldn't find the plan you specified")
       return
     })
 
-    console.log(`Found plan -> ${planSelect.value}`)
 
-    console.log(`Found plan_id ${plan_id}`)
-    fetch(`schedules/schedule_${plan_id}.json`)
-    .then(response => response.json())
-    .then(fnd_schedule => {
-      schedule = fnd_schedule
-    }).catch(reason=>{
-      console.log(reason);
-      alert("Something went wrong. Couldn't find the schedule for the plan you specified")
-      return
-    })
-    console.log(`Found schedule ${schedule}`)
-
-  
-    // Create the ShapeTracker object
-    const ShapeTracker = {
-      name: name,
-      birthdate: birthdate,
-      weight: weight,
-      plan: plan,
-      weights: [],
-      schedule:schedule
-    };
-  
-    // Save the ShapeTracker object to local storage
-    localStorage.setItem("ShapeTracker", JSON.stringify(ShapeTracker));
   
     // Redirect to the main page
     //window.location.href = "main.html";
