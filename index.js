@@ -33,15 +33,11 @@ if (ShapeTracker) {
     fetch("plans.json")
     .then(response => response.json())
     .then(plans => {
-      console.log("seeking plans")
       const selectedPlan = plans.find(plan => plan.plan_name === planSelect.value);
-      console.log(`Found plan -> ${selectedPlan.description}`)
 
-      console.log(`Found plan_id ${selectedPlan.plan_id}`)
       fetch(`schedules/schedule_${selectedPlan.plan_id}.json`)
       .then(response => response.json())
       .then(schedule => {
-        console.log(`Found schedule ${schedule}`)
      
       // Create the ShapeTracker object
       const ShapeTracker = {
@@ -56,13 +52,11 @@ if (ShapeTracker) {
       // Save the ShapeTracker object to local storage
       localStorage.setItem("ShapeTracker", JSON.stringify(ShapeTracker));
       }).catch(reason=>{
-        console.log(reason);
         alert("Something went wrong. Couldn't find the schedule for the plan you specified")
         return
       });
       
     }).catch(reason => {
-      console.log(reason)
       alert("Something went wrong. Couldn't find the plan you specified")
       return
     });
@@ -70,7 +64,7 @@ if (ShapeTracker) {
 
   
     // Redirect to the main page
-    //window.location.href = "main.html";
+    window.location.href = "main.html";
   }
  
   

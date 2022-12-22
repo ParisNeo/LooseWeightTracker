@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log(ShapeTracker)
     
 
-        const birthDate = ShapeTracker.birthDate;
+        const birthDate = ShapeTracker.birthdate;
 
         // Convert the birth date to a Date object
         const birthDateObject = new Date(birthDate);
