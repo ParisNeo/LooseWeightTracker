@@ -96,6 +96,14 @@ header {
     padding: 20px; /* This adds some padding around the content inside the div */
     z-index: 999; /* This will make the div show on top of everything else on the page */
   }
+
+  #advise-header{
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    top: 0;
+    left: 0;
+  }
   
   #close-button {
     position: absolute; /* This will position the button relative to the parent element (the advice div) */
