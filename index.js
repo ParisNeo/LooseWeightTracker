@@ -40,7 +40,7 @@ if (ShapeTracker) {
       plan_id = selectedPlan.plan_id;
     })
 
-    console.log(`Found plan ${planSelect.value}`)
+    console.log(`Found plan -> ${planSelect.value}`)
 
     console.log(`Found plan_id ${plan_id}`)
     fetch(`schedules/schedule_${plan_id}.json`)
