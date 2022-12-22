@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const schedule = ShapeTracker.schedule;
         const randomIndex = Math.floor(Math.random() * schedule.advice.length);
         const randomAdvice = schedule.advice[randomIndex];
-        document.getElementById("advice").innerHTML = randomAdvice;
         console.log(ShapeTracker)
     
         const centerPanel = document.getElementById("center-panel");
@@ -40,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
         adviceDiv.style.position = "absolute";
         adviceDiv.style.bottom = "0";
         adviceDiv.style.zIndex = "999";
-
+        adviceDiv.innerHTML = randomAdvice;
 
         const birthDate = ShapeTracker.birthdate;
 
