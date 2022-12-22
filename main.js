@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Display the user's schedule in the center panel
         // Get the current day of the week as a number (0 for Sunday, 1 for Monday, etc.)
         const today = new Date().getDay();
-        const currentDaySchedule = ShapeTracker.schedule.days.find(day => day.day === currentDay);
+        const currentDaySchedule = ShapeTracker.schedule.days.find(day => day.day === today);
         let tableHTML = '<table>';
 
         for (const activity of currentDaySchedule.activities) {
