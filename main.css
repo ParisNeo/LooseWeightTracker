@@ -25,6 +25,7 @@ header {
   }
   
   #center-panel {
+    left: 200px;
     background-color: #555;
     margin: 20px 0;
     padding: 20px;
