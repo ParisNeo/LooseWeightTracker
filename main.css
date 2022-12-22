@@ -70,22 +70,24 @@ html, body {
     background-color: lightgray;
     border-radius: 10px;
   }
-  #advice-floating-div {
-    /* Set the position to fixed so that it stays in the same place on the page */
-    position: fixed;
-    /* Set the bottom of the div to 10px from the bottom of the page */
-    bottom: 10px;
-    /* Set the width of the div to 300px */
-    width: 300px;
-    /* Set the background color of the div to white */
-    background-color: white;
-    /* Add a border */
-    border: 1px solid gray;
-    /* Add some padding */
-    padding: 10px;
-    /* Add a drop shadow */
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
-    /* Add a close button */
-    /* Note: you'll need to add a click event listener to the close button to close the div */
-    overflow: hidden;
+  .advice-div {
+    position: fixed; /* This will make the div stay in the same place even when the page is scrolled */
+    bottom: 0; /* This will position the div at the bottom of the screen */
+    left: 50%; /* This will position the div horizontally centered on the screen */
+    transform: translate(-50%, 0); /* This will adjust the position of the div so that it is truly centered on the screen */
+    background-color: white; /* This sets the background color of the div */
+    border: 1px solid black; /* This adds a border around the div */
+    padding: 20px; /* This adds some padding around the content inside the div */
+    z-index: 999; /* This will make the div show on top of everything else on the page */
+  }
+  
+  .close-button {
+    position: absolute; /* This will position the button relative to the parent element (the advice div) */
+    top: 0; /* This will position the button at the top of the advice div */
+    right: 0; /* This will position the button at the right of the advice div */
+    font-size: 18px; /* This sets the font size of the button */
+    background-color: transparent; /* This sets the background color of the button */
+    border: none; /* This removes the border around the button */
+    color: black; /* This sets the text color of the button */
+    cursor: pointer; /* This will make the cursor change to a pointer when hovering over the button */
   }
