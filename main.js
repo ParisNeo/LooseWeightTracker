@@ -13,7 +13,23 @@ document.addEventListener("DOMContentLoaded", function() {
     const exportLink = document.getElementById("export");
     const importLink = document.getElementById("import");
 
+    function showToday_sSchedule()
+    {
+        const content = document.getElementById("content");
+        // Display the user's schedule in the center panel
+        // Get the current day of the week as a number (0 for Sunday, 1 for Monday, etc.)
+        const today = new Date().getDay();
 
+        // Access the schedule for today
+        const todaySchedule = schedule.days[today];
+
+        // You can then access the different parts of the schedule for today, such as the meals, activities, and sleep
+        const meals = todaySchedule.meals;
+        const activities = todaySchedule.activity;
+        const sleep = todaySchedule.sleep;
+        content.innerHTML = `<h2>Today's Schedule</h2>
+                                <p>${ShapeTracker.schedule}</p>`;
+    }
 
     // Load the user's data and display it on the page
     function loadData() {
@@ -23,9 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const randomIndex = Math.floor(Math.random() * schedule.advice.length);
         const randomAdvice = schedule.advice[randomIndex];
         console.log(randomAdvice)
-        const content = document.getElementById("content");
         
-        const centerPanel = document.getElementById("center-panel");
         const adviceDiv = document.getElementById("advise-div");
         const advicecontentDiv = document.getElementById("advise-content");
         
@@ -56,10 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
                             <p>Age: ${age}</p>
                             <p>Weight: ${ShapeTracker.weight}</p>`;
     
-        // Display the user's schedule in the center panel
-
-        content.innerHTML = `<h2>Today's Schedule</h2>
-                                <p>${ShapeTracker.schedule}</p>`;
+        showToday_sSchedule();
     }
 
     // Add a new weight entry to the user's data
