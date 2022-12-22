@@ -29,7 +29,6 @@ if (ShapeTracker) {
     const birthdate = document.getElementById("birthdate").value;
     const weight = document.getElementById("weight").value;
     var plan_id = 0;
-    var schedule = {};
     
     fetch("plans.json")
     .then(response => response.json())
@@ -37,17 +36,14 @@ if (ShapeTracker) {
       console.log("seeking plans")
       const selectedPlan = plans.find(plan => plan.plan_name === planSelect.value);
       console.log(`Found plan ${selectedPlan}`)
-      plan_id = selectedPlan.plan_id;
       console.log(`Found plan -> ${planSelect.value}`)
 
-      console.log(`Found plan_id ${plan_id}`)
-      fetch(`schedules/schedule_${plan_id}.json`)
+      console.log(`Found plan_id ${selectedPlan.plan_id}`)
+      fetch(`schedules/schedule_${selectedPlan.plan_id}.json`)
       .then(response => response.json())
-      .then(fnd_schedule => {
-        schedule = fnd_schedule
+      .then(schedule => {
         console.log(`Found schedule ${schedule}`)
-  
-    
+     
       // Create the ShapeTracker object
       const ShapeTracker = {
         name: name,
@@ -64,13 +60,13 @@ if (ShapeTracker) {
         console.log(reason);
         alert("Something went wrong. Couldn't find the schedule for the plan you specified")
         return
-      })
+      });
       
     }).catch(reason => {
       console.log(reason)
       alert("Something went wrong. Couldn't find the plan you specified")
       return
-    })
+    });
 
 
   
