@@ -6,6 +6,8 @@ function deleteAllData() {
   }
 // Wait until the DOM is ready
 document.addEventListener("DOMContentLoaded", function() {
+    // Load the ShapeTracker object from local storage
+    const ShapeTracker = JSON.parse(localStorage.getItem("ShapeTracker"));
     // Get the instances of each element
     const todayLink = document.getElementById("today");
     const addLink = document.getElementById("add");
@@ -44,8 +46,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Load the user's data and display it on the page
     function loadData() {
-        // Load the ShapeTracker object from local storage
-        const ShapeTracker = JSON.parse(localStorage.getItem("ShapeTracker"));
         const schedule = ShapeTracker.schedule;
         const randomIndex = Math.floor(Math.random() * schedule.advice.length);
         const randomAdvice = schedule.advice[randomIndex];
