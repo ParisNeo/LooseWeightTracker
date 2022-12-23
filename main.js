@@ -54,10 +54,11 @@ document.addEventListener("DOMContentLoaded", function() {
         const adviceDiv = document.getElementById("advise-div");
         const advicecontentDiv = document.getElementById("advise-content");
         
+        const centerPanel = document.getElementById("center-panel");
         const closeButton = document.getElementById("close-button");
         advicecontentDiv.innerHTML = randomAdvice
         closeButton.addEventListener("click", () => {
-            adviceDiv.style.visibility=false;
+            centerPanel.removeChild(adviceDiv);
           });
           
 
