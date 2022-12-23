@@ -114,7 +114,9 @@ header {
     right: 0; /* This will position the button at the right of the advice div */
     font-size: 18px; /* This sets the font size of the button */
     background-color: transparent; /* This sets the background color of the button */
-    border: none; /* This removes the border around the button */
+    border-style: dashed;
+    border-width: 1px;
+    border-color: #000;
     color: black; /* This sets the text color of the button */
     cursor: pointer; /* This will make the cursor change to a pointer when hovering over the button */
   }
