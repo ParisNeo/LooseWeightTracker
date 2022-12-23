@@ -58,7 +58,8 @@ document.addEventListener("DOMContentLoaded", function() {
         const closeButton = document.getElementById("close-button");
         advicecontentDiv.innerHTML = randomAdvice
         closeButton.addEventListener("click", () => {
-            centerPanel.removeChild(adviceDiv);
+            console.log("Removing advise")
+            adviceDiv.remove();
           });
           
 
