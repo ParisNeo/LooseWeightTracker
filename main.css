@@ -103,7 +103,9 @@ header {
     height: 50px;
     top: 0;
     left: 0;
+    padding:20px;
     margin: 10px;
+    background-color: #222;
   }
   
   #close-button {
