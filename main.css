@@ -103,8 +103,7 @@ header {
     height: 50px;
     top: 0;
     left: 0;
-    padding: 10px 10px 10px 10px;
-    text-align: center;
+    margin: 10px;
   }
   
   #close-button {
