@@ -109,7 +109,7 @@ header {
     background-color: #555;
   }
   #advise-content{
-
+    background-color: #555;
   }
   #close-button {
     position: absolute; /* This will position the button relative to the parent element (the advice div) */
