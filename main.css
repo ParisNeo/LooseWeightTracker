@@ -95,7 +95,6 @@ header {
     transform: translate(-50%, 0); /* This will adjust the position of the div so that it is truly centered on the screen */
     border: 1px solid black; /* This adds a border around the div */
     padding: 20px; /* This adds some padding around the content inside the div */
-    z-index: 999; /* This will make the div show on top of everything else on the page */
   }
 
   #advise-header{
