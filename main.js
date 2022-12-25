@@ -4,6 +4,19 @@ function deleteAllData() {
       window.location.href = "index.html";
     }
   }
+function convertTimeStringToDate(timeString) {
+  // Split the time string at the colon
+  const parts = timeString.split(':');
+  // Convert the hours and minutes to integers
+  const hours = parseInt(parts[0], 10);
+  const minutes = parseInt(parts[1], 10);
+  // Get the current date
+  const now = new Date();
+  // Set the year, month, and day of the new Date object to the current values
+  const date = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hours, minutes);
+  return date;
+}
+  
 // Wait until the DOM is ready
 document.addEventListener("DOMContentLoaded", function() {
     // Load the ShapeTracker object from local storage
@@ -14,34 +27,151 @@ document.addEventListener("DOMContentLoaded", function() {
     const progressLink = document.getElementById("progress");
     const exportLink = document.getElementById("export");
     const importLink = document.getElementById("import");
+    function calculateDuration(startTime, endTime) {
+      // Convert the start and end times to Date objects
+      const start = new Date('1970-01-01T' + startTime + 'Z');
+      let end = new Date('1970-01-01T' + endTime + 'Z');
+    
+      // If the end time is earlier than the start time, add 1440 (the number of minutes in a day) to the end time
+      if (end < start) {
+        end = new Date(end.getTime() + 1440 * 60 * 1000);
+      }
+    
+      // Calculate the duration in minutes
+      const duration = (end - start) / 1000 / 60;
+    
+      // Return the duration
+      return duration;
+    }
+    function prepare_items(currentDaySchedule){
+      const items = [];
+      for (const activity of currentDaySchedule.activity) {
+          items.push({
+            type: 'activity',
+            name: activity.name,
+            start_time: activity.start_time,
+            end_time: activity.end_time
+          });
+        }
+        
+      for (const meal of currentDaySchedule.meals) {
+      items.push({
+          type: 'meal',
+          name: meal.name,
+          start_time: meal.start_time,
+          end_time: meal.end_time
+      });
+      }
+      
+      for (const sleep of currentDaySchedule.sleep) {
+      items.push({
+          type: 'sleep',
+          name: 'Sleep',
+          start_time: sleep.start_time,
+          end_time: sleep.end_time
+      });
+      }
+      console.log(items)
+      
+      items.sort((a, b) => {
+          // Get the start time of each item as a Date object
+          const startTimeA = convertTimeStringToDate(a.start_time);
+          const startTimeB = convertTimeStringToDate(b.start_time);
+          let diff = startTimeA - startTimeB;
+          console.log(`a:${a.name}(${a.start_time}=>${startTimeA}), b: ${b.name}(${b.start_time}=>${startTimeB}), diff:${diff}, sign: ${Math.sign(diff)}`)
+          // Compare the start times and return a negative value if a comes before b,
+          // a positive value if a comes after b, or 0 if they are equal
+          return  Math.sign(diff) ;
+        });
 
-    function showToday_sSchedule()
-    {
+      console.log(items)
+      // Add free time
+        for (let i = 0; i < items.length - 1; i++) {
+          const currentEvent = items[i];
+          const nextEvent = items[i + 1];
+        
+          // Calculate the duration of the gap between the events
+          const gapDuration = calculateDuration(currentEvent.end_time, nextEvent.start_time);
+        
+          // If there is a gap, add a new event to fill it
+          if (gapDuration > 0) {
+            items.splice(i + 1, 0, {
+              type: 'free time',
+              name: 'Free time',
+              start_time: currentEvent.end_time,
+              end_time: nextEvent.start_time
+            });
+          }
+        }
+      return items
+    }
+
+    function renderTable(items) {
+        const tableHTML = `<div class="schedule-table">${items.map(renderRow).join('')}</div>`;
+        document.getElementById('content').innerHTML = `<h2>Today's Schedule</h2>${tableHTML}`;
+    }
+
+    function renderRow(item) {
+      // Calculate the duration of the item in minutes
+      const duration = calculateDuration(item.start_time, item.end_time);
+      const currentTime = new Date();
+      const startTime = new Date(item.start_time);
+      const endTime = new Date(item.end_time);
+
+      let rowHTML = '';
+    
+
+      // Set the class of the row based on the type of the item
+      if (item.type === 'activity') {
+        rowHTML += '<div class="activity-row';
+      } else if (item.type === 'meal') {
+        rowHTML += '<div class="meal-row"';
+      } else if (item.type === 'free time') {
+        rowHTML += '<div class="sleep-row"';
+      } else if (item.type === 'sleep') {
+        rowHTML += '<div class="sleep-row"';
+      }
+
+      // If the current time is within the range of the start and end times, add the "current" class to the row
+      if (currentTime >= startTime && currentTime <= endTime) {
+        rowHTML += ' style:"border-style: solid;">';
+      }
+      else{
+        rowHTML += '">';
+      }
+
+
+      
+      // Set the height of the row based on the duration
+      rowHTML += `<div class="name-cell" style="height: ${duration+150}px;">${item.name}</div>`;
+    
+      // Add the time cell
+      rowHTML += `<div class="time-cell" style="height: ${duration+150}px;">
+                    <div class="time-row start-time">${item.start_time}</div>
+                    <div class="time-row duration">${duration} minutes</div>
+                    <div class="time-row end-time">${item.end_time}</div>
+                  </div>`;
+      rowHTML += '</div>';
+      return rowHTML;
+    }
+
+    function showToday_sSchedule() {
         const content = document.getElementById("content");
+        console.log(ShapeTracker.schedule)
         // Display the user's schedule in the center panel
         // Get the current day of the week as a number (0 for Sunday, 1 for Monday, etc.)
         const today = new Date().getDay();
-        const currentDaySchedule = ShapeTracker.schedule.days.find(day => day.day === today);
-        let tableHTML = '<table>';
+        const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const todayName = dayNames[today];
+        console.log(todayName);
+        const currentDaySchedule = ShapeTracker.schedule.days.find(day => day.day === todayName);
+        console.log(currentDaySchedule);
 
-        for (const activity of currentDaySchedule.activities) {
-            tableHTML += `<tr><td>${activity.time}</td><td>${activity.name}</td></tr>`;
-        }
-        const currentTime = new Date().getTime();
-
-        for (const activity of currentDaySchedule.activities) {
-          if (currentTime < activity.time) {
-            // This is the next activity, so you can highlight it in the table
-            tableHTML = tableHTML.replace(`<tr><td>${activity.time}</td><td>${activity.name}</td></tr>`,
-                                          `<tr><td>${activity.time}</td><td><strong>${activity.name}</strong></td></tr>`);
-            break;
-          }
-        }        
-
-        tableHTML += '</table>';
+          // get items from the schedule
+          items = prepare_items(currentDaySchedule)
+          // Render the table        
+          renderTable(items);
         
-        content.innerHTML = `<h2>Today's Schedule</h2>
-                              ${tableHTML}`;
     }
 
     // Load the user's data and display it on the page

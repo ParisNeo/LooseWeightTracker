@@ -1,6 +1,16 @@
 // Load the ShapeTracker object from local storage
 const ShapeTracker = JSON.parse(localStorage.getItem("ShapeTracker"));
 
+
+function loadJSON(file) {
+    // Running on a server, use the fetch function
+    return fetch(file)
+      .then(response => response.json())
+      .catch(error => {
+        throw error;
+      });
+}
+
 if (ShapeTracker) {
   // ShapeTracker object is found, redirect to index page
   window.location.href = "main.html";
@@ -8,18 +18,24 @@ if (ShapeTracker) {
   const form = document.getElementById("form");
   const planSelect = document.getElementById("plan");
   const planInfoDiv = document.getElementById("plan-info");
-  
   // Load the plans from the plans.json file and add them to the select element
-  fetch("plans.json")
-    .then(response => response.json())
-    .then(plans => {
-      plans.forEach(plan => {
-        const option = document.createElement("option");
-        option.value = plan.plan_name;
-        option.text = plan.plan_name;
-        planSelect.add(option);
-      });
+  loadJSON('plans.json')
+  .then(plans => {
+    // Use the data here
+    console.log(plans);
+    plans.forEach(plan => {
+      const option = document.createElement("option");
+      option.value = plan.plan_name;
+      option.text = plan.plan_name;
+      planSelect.add(option);
     });
+})
+  .catch(error => {
+    // Handle the error here
+    console.error(error);
+  });
+
+
   
   
   // Start tracking function
@@ -35,7 +51,7 @@ if (ShapeTracker) {
     .then(plans => {
       const selectedPlan = plans.find(plan => plan.plan_name === planSelect.value);
 
-      fetch(`schedules/schedule_${selectedPlan.plan_id}.json`)
+      fetch(`./schedules/schedule_${selectedPlan.plan_id}.json`)
       .then(response => response.json())
       .then(schedule => {
      
@@ -89,24 +105,23 @@ if (ShapeTracker) {
   
   // Update the plan info div when the plan select element changes
   planSelect.addEventListener("change", e => {
-    fetch("plans.json")
-      .then(response => response.json())
-      .then(plans => {
-        const selectedPlan = plans.find(plan => plan.plan_name === e.target.value);
-        planInfoDiv.innerHTML = selectedPlan.plan_description;
-      }).catch(reason=>{
-        console.log(reason);
-      })
+    loadJSON('plans.json')
+    .then(plans => {
+      // Use the data here
+      const selectedPlan = plans.find(plan => plan.plan_name === e.target.value);
+      planInfoDiv.innerHTML = selectedPlan.plan_description;
+    });
   });
   // If the ShapeTracker object already exists in local storage, redirect to the main page on page load
   window.addEventListener("load", () => {
-      fetch("plans.json")
-      .then(response => response.json())
-      .then(plans => {
-        const selectedPlan = plans.find(plan => plan.plan_name === planSelect.value);
-        planInfoDiv.innerHTML = selectedPlan.plan_description;
-      })
+    loadJSON('plans.json')
+    .then(plans => {
+      // Use the data here
+      const selectedPlan = plans.find(plan => plan.plan_name === planSelect.value);
+      planInfoDiv.innerHTML = selectedPlan.plan_description;
     });
+
+  });
 
 }
 
