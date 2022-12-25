@@ -82,6 +82,8 @@ header {
     border-radius: 10px;
   }
   #advise-div {
+    display: flex;
+    flex-direction: column;
     background-color: #333;
     min-height: 500px;
     border-top-left-radius: 20px;
@@ -106,7 +108,9 @@ header {
     margin: 10px;
     background-color: #555;
   }
-  
+  #advise-content{
+
+  }
   #close-button {
     position: absolute; /* This will position the button relative to the parent element (the advice div) */
     top: 0; /* This will position the button at the top of the advice div */
