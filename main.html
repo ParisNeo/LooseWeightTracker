@@ -4,7 +4,6 @@
   <title>ShapeTracker</title>
   <link rel="stylesheet" href="main.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-  <script src="main.js"></script>
 </head>
 <body>
   <div id="left-panel">
@@ -27,13 +26,57 @@
     </div>    
   </div>
   <div id="center-panel">
-    <dev id="content"></dev>
+
+    <!-- Schedule page content -->
+    <div id="schedule-page">
+      <dev id="content"></dev>
+
+    </div>
+
+    <!-- Add page content -->
+    <div id="add-page" style="display:none;" style="display: none">
+      <!-- Add page content goes here -->
+      <form>
+        <label for="weight">Weight:</label><br>
+        <input type="number" id="weight" name="weight"><br>
+        <label for="date">Date:</label><br>
+        <input type="date" id="date" name="date"><br><br>
+        <button type="button" onclick="addWeight()">Add Weight</button>
+      </form> 
+      <table id="weight-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Weight</th>
+          </tr>  
+        </thead>
+        <tbody>
+
+        </tbody>
+        <!-- Previous weight rows go here -->
+      </table>            
+    </div>
+    
+    <!-- Progress page content -->
+    <div id="progress-page" style="display:none;" style="display: none">
+      <!-- Progress page content goes here -->
+    </div>
+    
+    <!-- Export page content -->
+    <div id="export-page" style="display:none;" style="display: none">
+      <!-- Export page content goes here -->
+    </div>
+    
+    <!-- Import page content -->
+    <div id="import-page" style="display:none;" style="display: none">
+      <!-- Import page content goes here -->
+    </div>    
     <div id="advise-div">
       <div id="advise-header">Advise of the day</div>
       <button id="close-button">X</button>
       <div id="advise-content"></div>
     </div>
   </div>
-
+  <script src="main.js"></script>
 </body>
 </html>

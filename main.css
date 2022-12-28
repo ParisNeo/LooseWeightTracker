@@ -112,30 +112,32 @@ header {
     left: 0px;
     width: 450px;
     height: 20px;
-    padding:10px;
-    margin: 20px;
+    padding:5px;
+    margin: 5px;
+    margin-left: 20px;
     background-color: #555;
     height: auto;
   }
   #advise-content{
     position: absolute; /* This will position the button relative to the parent element (the advice div) */
     border-radius: 10px;
-    top: 70px; /* This will position the button at the top of the advice div */
+    top: 40px; /* This will position the button at the top of the advice div */
+    bottom:10px;
     left: 0px;
     width: 495px;
     margin: 10px;
     padding: 10px;
     background-color: #555;
-    height: auto;
   }
 
   #close-button {
     position: absolute; /* This will position the button relative to the parent element (the advice div) */
     top: 0px; /* This will position the button at the top of the advice div */
     right: 0px; /* This will position the button at the right of the advice div */
-    padding:10px;
-    margin: 20px;    
-    border-radius: 10px;
+    padding:5px;
+    margin: 5px;    
+    margin-right: 20px;
+    border-radius: 5px;
     font-size: 18px; /* This sets the font size of the button */
     background-color: transparent; /* This sets the background color of the button */
     border-width: 1px;
@@ -143,6 +145,8 @@ header {
     background-color: #555;
     color: black; /* This sets the text color of the button */
     cursor: pointer; /* This will make the cursor change to a pointer when hovering over the button */
+    width:30px;
+    height:30px;
   }
 
   #close-button:hover{
@@ -204,7 +208,6 @@ header {
     align-items: center;
     justify-content: center;
 
-    border-style: solid;
     font-size: large;
     background-color: transparent;
     flex:80%;
@@ -227,28 +230,42 @@ header {
     color: #000000; /* Black */
   }
   
-  .activity-row.current {
-    background-color: #006400; /* Dark green */
-    color: #FFFFFF; /* White */
-  }
-  
+ 
   .sleep-row {
     background-color: #ADD8E6; /* Light blue */
     color: #000000; /* Black */
   }
 
-  .gap-row{
-    flex: 20%;
-    display: flex;
-    flex-direction: column;
-    background-color: #ADD8E6; /* Light blue */
+  .hilighted-row {
+    background-color: #ebcc45; /* Light blue */
     color: #000000; /* Black */
   }
-  .meal-row, .activity-row, .sleep-row {
+
+  .free-row{
+    background-color: #ffffff; /* Light blue */
+    color: #000000; /* Black */
+  }
+  .meal-row, .activity-row, .sleep-row, .free-row, .hilighted-row {
     display: flex;
     flex-direction: row;
     padding-top: 10px;
     padding-right: 15px;
     padding-bottom: 10px;
     padding-left: 15px;
+  }
+
+/* Weight table */
+  #weight-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  #weight-table th {
+    background-color: rgb(70, 39, 39);
+  }
+  
+  #weight-table td {
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 8px;
   }

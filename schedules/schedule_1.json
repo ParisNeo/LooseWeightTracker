@@ -1,24 +1,192 @@
 {
   "plan_id": "1",
+  "food": {
+    "breakfast": [
+      {
+        "name": "Overnight oats",
+        "description": "Oats soaked in almond milk with chia seeds, sliced strawberries, and a sprinkle of cinnamon",
+        "contents": {
+          "calories": 250,
+          "carbohydrates": 35,
+          "protein": 10,
+          "fiber": 4,
+          "fat": 6,
+          "vitamins": ["Vitamin B", "Vitamin C", "Vitamin E"],
+          "minerals": ["Iron", "Phosphorus", "Magnesium"]
+        }
+      },
+      {
+        "name": "Egg white omelette",
+        "description": "Omelette made with egg whites, spinach, bell peppers, and avocado",
+        "contents": {
+          "calories": 200,
+          "protein": 12,
+          "vitamins": ["Vitamin A", "Vitamin C", "Vitamin E", "Vitamin B12"],
+          "minerals": ["Iron", "Calcium", "Magnesium", "Zinc"]
+        }
+      },
+      {
+        "name": "Smoothie bowl",
+        "description": "Smoothie made with unsweetened almond milk, frozen berries, spinach, and protein powder topped with granola and sliced almonds",
+        "contents": {
+          "calories": 300,
+          "protein": 20,
+          "vitamins": ["Vitamin A", "Vitamin C", "Vitamin E"],
+          "minerals": ["Iron", "Calcium"]
+        }
+      },
+      {
+        "name": "Greek yogurt parfait",
+        "description": "Greek yogurt layered with mixed berries and a sprinkle of honey",
+        "contents": {
+          "calories": 200,
+          "protein": 15,
+          "vitamins": ["Vitamin A", "Vitamin C"],
+          "minerals": ["Iron", "Calcium"]
+        }
+      },
+      {
+        "name": "Avocado toast",
+        "description": "Whole grain toast topped with mashed avocado, cherry tomatoes, and a sprinkle of salt",
+        "contents": {
+          "calories": 250,
+          "protein": 6,
+          "vitamins": ["Vitamin A", "Vitamin C", "Vitamin E"],
+          "minerals": ["Iron", "Calcium"]
+        }
+      },
+      {
+        "name": "Peanut butter banana toast",
+        "description": "Whole grain toast topped with peanut butter and sliced bananas",
+        "contents": {
+          "calories": 300,
+          "protein": 8,
+          "vitamins": ["Vitamin A", "Vitamin C", "Vitamin E"],
+          "minerals": ["Iron", "Calcium"]
+        }
+      },
+      {
+        "name": "Scrambled eggs with veggies",
+        "description": "Scrambled eggs with diced bell peppers, onions, and mushrooms",
+        "contents": {
+          "calories": 200,
+          "protein": 12,
+          "vitamins": ["Vitamin A", "Vitamin C", "Vitamin E", "Vitamin B12"],
+          "minerals": ["Iron", "Calcium"]
+        }
+      },
+      {"name": "Quinoa and almond milk breakfast bowl",
+      "description": "A bowl of quinoa mixed with almond milk and topped with sliced bananas and a sprinkle of cinnamon. Quinoa is a good source of protein and contains a variety of nutrients such as manganese, iron, copper, phosphorus, magnesium, zinc, vitamin B2, and dietary fiber. Almond milk is a plant-based milk made from ground almonds and water, and it is rich in protein, vitamins, and minerals. It is also low in calories and contains no lactose or gluten.",
+      "contents": {
+        "calories": 250,
+        "protein": 10,
+        "vitamins": ["A", "B1", "B2", "B3", "E"],
+        "minerals": ["magnésium", "calcium", "zinc", "fer", "cuivre", "manganèse"]
+      }
+      },
+      {
+        "name": "Cottage cheese with fruit",
+        "description": "Cottage cheese topped with mixed berries and a sprinkle of honey",
+        "contents": {
+          "calories": 250,
+          "protein": 15,
+          "vitamins": ["Vitamin D", "Vitamin B12"],
+          "minerals": ["Calcium", "Phosphorus"]
+        }
+      }
+    ],
+    "launch": [
+      {
+        "name": "Mediterranean Quinoa Salad",
+        "description": "A healthy and flavorful salad made with quinoa, cherry tomatoes, cucumber, red onion, Kalamata olives, and feta cheese, all tossed in a homemade lemon vinaigrette. Perfect for a light lunch or as a side dish for a BBQ.",
+        "contents": {
+          "calories": 250,
+          "protein": 8,
+          "vitamins": ["Vitamin A", "Vitamin C", "Vitamin E"],
+          "minerals": ["Iron", "Calcium"]
+        }
+      },
+      {
+        "name": "Grilled Chicken with Roasted Vegetables",
+        "description": "Grilled chicken breast served with a side of roasted vegetables, including broccoli, bell peppers, and zucchini. This meal is high in protein and low in calories, making it a great option for those looking to lose weight.",
+        "contents": {
+          "calories": 300,
+          "protein": 25,
+          "vitamins": ["Vitamin A", "Vitamin C"],
+          "minerals": ["Iron", "Calcium"]
+        }
+      },
+      {
+        "name": "Baked Salmon with Roasted Asparagus and Quinoa",
+        "description": "Baked salmon served with roasted asparagus and a side of quinoa. This meal is high in protein and packed with nutrients, making it a great choice for those looking to lose weight. The quinoa adds a healthy dose of complex carbohydrates, while the asparagus provides a source of fiber.",
+        "contents": {
+          "calories": 400,
+          "protein": 30,
+          "vitamins": ["Vitamin A", "Vitamin C", "Vitamin D", "Vitamin E"],
+          "minerals": ["Iron", "Calcium", "Potassium"]
+        }
+      },      
+      {
+        "name": "Veggie Omelette with Whole Wheat Toast",
+        "description": "A veggie omelette made with eggs, spinach, bell peppers, and onions, served with a slice of whole wheat toast. This meal is high in protein and provides a good source of fiber, making it a great choice for those looking to lose weight. The whole wheat toast adds a healthy dose of complex carbohydrates.",
+        "contents": {
+          "calories": 250,
+          "protein": 15,
+          "vitamins": ["Vitamin A", "Vitamin C", "Vitamin E", "Vitamin B12"],
+          "minerals": ["Iron", "Calcium"]
+        }
+      },
+      {
+        "name": "Turkey and Avocado Wrap",
+        "description": "A wrap made with sliced turkey, avocado, lettuce, and tomato, all rolled up in a whole wheat tortilla. This meal is high in protein and provides a good source of fiber, making it a great choice for those looking to lose weight. The avocado adds healthy fats, while the whole wheat tortilla provides complex carbohydrates.",
+        "contents": {
+          "calories": 350,
+          "protein": 20,
+          "vitamins": ["Vitamin A", "Vitamin C", "Vitamin E"],
+          "minerals": ["Iron", "Calcium"]
+        }
+      },
+      {
+        "name": "Quinoa and black bean salad",
+        "description": "Salad made with quinoa, black beans, cherry tomatoes, cucumber, and avocado, dressed with olive oil and lemon juice",
+        "contents": {
+          "calories": 400,
+          "protein": 20,
+          "vitamins": ["Vitamin C", "Vitamin B6"],
+          "minerals": ["Iron", "Magnesium", "Phosphorous"]
+        }
+      }  
+    ],
+    "dinner": [
+      {
+        "name": "Grilled salmon with roasted vegetables",
+        "description": "Grilled salmon served with a side of roasted vegetables, including zucchini, bell peppers, and cherry tomatoes, and a squeeze of lemon juice",
+        "contents": {
+          "calories": 300,
+          "protein": 24,
+          "fats": 4,
+          "vitamins": ["Vitamin A", "Vitamin C", "Vitamin D"],
+          "minerals": ["Iron", "Calcium", "Omega-3 fatty acids"]
+        }
+      }
+    ]
+  },
   "days": [
     {
       "day": "Monday",
       "meals": [
         {
           "name": "Breakfast",
-          "description": "Scrambled eggs with spinach and whole grain toast",
           "start_time": "07:00",
           "end_time": "07:30"
         },
         {
           "name": "Lunch",
-          "description": "Grilled chicken salad with mixed greens and vinaigrette dressing",
           "start_time": "12:00",
           "end_time": "12:30"
         },
         {
           "name": "Dinner",
-          "description": "Baked salmon with roasted vegetables",
           "start_time": "18:00",
           "end_time": "18:30"
         }
@@ -26,15 +194,13 @@
       "activity": [
         {
           "name": "Warm up with 5 minute jog",
-          "duration": 5,
           "start_time": "09:00",
           "end_time": "09:05"
         },
         {
           "name": "30 minutes of strength training",
-          "duration": 30,
-          "start_time": "09:30",
-          "end_time": "10:00"
+          "start_time": "09:05",
+          "end_time": "09:35"
         }
       ],
       "sleep": [
@@ -49,19 +215,16 @@
       "meals": [
         {
           "name": "Breakfast",
-          "description": "Oatmeal with berries and nuts",
           "start_time": "07:00",
           "end_time": "07:30"
         },
         {
           "name": "Lunch",
-          "description": "Turkey and avocado wrap with mixed greens",
           "start_time": "12:00",
           "end_time": "12:30"
         },
         {
           "name": "Dinner",
-          "description": "Quinoa and black bean stir fry with vegetables",
           "start_time": "18:00",
           "end_time": "18:30"
         }
@@ -69,15 +232,13 @@
       "activity": [
         {
           "name": "Warm up with 5 minute jog",
-          "duration": 5,
           "start_time": "09:00",
           "end_time": "09:05"
         },
         {
-          "name": "30 minutes of cardio",
-          "duration": 30,
-          "start_time": "09:30",
-          "end_time": "10:00"   
+          "name": "30 minutes of strength training",
+          "start_time": "09:05",
+          "end_time": "09:35"
         }
       ],
       "sleep": [
@@ -92,19 +253,16 @@
       "meals": [
         {
           "name": "Breakfast",
-          "description": "Greek yogurt with berries and nuts",
           "start_time": "07:00",
           "end_time": "07:30"
         },
         {
           "name": "Lunch",
-          "description": "Tuna salad with mixed greens and whole grain crackers",
           "start_time": "12:00",
           "end_time": "12:30"
         },
         {
           "name": "Dinner",
-          "description": "Grilled vegetables with quinoa",
           "start_time": "18:00",
           "end_time": "18:30"
         }
@@ -112,15 +270,13 @@
       "activity": [
         {
           "name": "Warm up with 5 minute jog",
-          "duration": 5,
           "start_time": "09:00",
           "end_time": "09:05"
         },
         {
           "name": "30 minutes of strength training",
-          "duration": 30,
-          "start_time": "09:30",
-          "end_time": "10:00"
+          "start_time": "09:05",
+          "end_time": "09:35"
         }
       ],
       "sleep": [
@@ -135,19 +291,16 @@
       "meals": [
         {
           "name": "Breakfast",
-          "description": "Egg white omelette with spinach and whole grain toast",
           "start_time": "07:00",
           "end_time": "07:30"
         },
         {
           "name": "Lunch",
-          "description": "Grilled chicken and vegetable skewers with quinoa",
           "start_time": "12:00",
           "end_time": "12:30"
         },
         {
           "name": "Dinner",
-          "description": "Roasted salmon with sweet potato and broccoli",
           "start_time": "18:00",
           "end_time": "18:30"
         }
@@ -155,15 +308,13 @@
       "activity": [
         {
           "name": "Warm up with 5 minute jog",
-          "duration": 5,
           "start_time": "09:00",
           "end_time": "09:05"
         },
         {
-          "name": "30 minutes of cardio",
-          "duration": 30,
-          "start_time": "09:30",
-          "end_time": "10:00"
+          "name": "30 minutes of strength training",
+          "start_time": "09:05",
+          "end_time": "09:35"
         }
       ],
       "sleep": [
@@ -178,19 +329,16 @@
       "meals": [
         {
           "name": "Breakfast",
-          "description": "Oatmeal with nuts and dried fruit",
           "start_time": "07:00",
           "end_time": "07:30"
         },
         {
           "name": "Lunch",
-          "description": "Turkey and avocado wrap with mixed greens",
           "start_time": "12:00",
           "end_time": "12:30"
         },
         {
           "name": "Dinner",
-          "description": "Grilled tofu with roasted vegetables and quinoa",
           "start_time": "18:00",
           "end_time": "18:30"
         }
@@ -198,15 +346,13 @@
       "activity": [
         {
           "name": "Warm up with 5 minute jog",
-          "duration": 5,
           "start_time": "09:00",
           "end_time": "09:05"
         },
         {
           "name": "30 minutes of strength training",
-          "duration": 30,
-          "start_time": "09:30",
-          "end_time": "10:00"
+          "start_time": "09:05",
+          "end_time": "09:35"
         }
       ],
       "sleep": [
@@ -221,19 +367,16 @@
       "meals": [
         {
           "name": "Breakfast",
-          "description": "Scrambled eggs with whole grain toast and fruit",
           "start_time": "07:00",
           "end_time": "07:30"
         },
         {
           "name": "Lunch",
-          "description": "Chicken and quinoa salad with mixed greens",
           "start_time": "12:00",
           "end_time": "12:30"
         },
         {
           "name": "Dinner",
-          "description": "Stir fry with vegetables and tofu",
           "start_time": "18:00",
           "end_time": "18:30"
         }
@@ -241,15 +384,13 @@
       "activity": [
         {
           "name": "Warm up with 5 minute jog",
-          "duration": 5,
           "start_time": "09:00",
           "end_time": "09:05"
         },
         {
-          "name": "30 minutes of yoga",
-          "duration": 30,
-          "start_time": "09:30",
-          "end_time": "10:00"
+          "name": "30 minutes of strength training",
+          "start_time": "09:05",
+          "end_time": "09:35"
         }
       ],
       "sleep": [
@@ -264,19 +405,16 @@
       "meals": [
         {
           "name": "Breakfast",
-          "description": "Smoothie bowl with berries and nuts",
           "start_time": "07:00",
           "end_time": "07:30"
         },
         {
           "name": "Lunch",
-          "description": "Taco salad with ground turkey and avocado",
           "start_time": "12:00",
           "end_time": "12:30"
         },
         {
           "name": "Dinner",
-          "description": "Grilled chicken with roasted vegetables and brown rice",
           "start_time": "18:00",
           "end_time": "18:30"
         }
@@ -284,15 +422,13 @@
       "activity": [
         {
           "name": "Warm up with 5 minute jog",
-          "duration": 5,
           "start_time": "09:00",
           "end_time": "09:05"
         },
         {
-          "name": "30 minutes of cardio",
-          "duration": 30,
-          "start_time": "09:30",
-          "end_time": "10:00"
+          "name": "30 minutes of strength training",
+          "start_time": "09:05",
+          "end_time": "09:35"
         }
       ],
       "sleep": [
@@ -333,7 +469,7 @@
     "Exercise regularly: Regular physical activity can help you burn calories and maintain a healthy weight. Aim for at least 150 minutes of moderate intensity exercise per week.",
     "Eat healthy fats: Healthy fats like olive oil, avocado, and nuts can help keep you feeling full and satisfied, and may even help with weight loss. Just be sure to keep your portions in check.",
     "Keep track of your progress: Using a food diary or tracking app can help you stay on track with your weight loss goals. Regularly checking in can help you stay motivated and make any necessary adjustments.",
-    "Don't skip meals: Skipping meals can lead to overeating later in the day, making it harder to stick to your weight loss goals. Aim to eat regular, balanced meals throughout the day.",    
+    "Don't skip meals: Skipping meals can lead to overeating later in the day, making it harder to stick to your weight loss goals. Aim to eat regular, balanced meals throughout the day.",
     "Track your food intake using a food diary or app. This will help you understand your eating habits and make necessary changes.",
     "Plan your meals in advance. This will help you make healthier choices and avoid impulse eating.",
     "Choose foods that are high in fiber and protein. These nutrients will help keep you feeling fuller for longer and help you reach your weight loss goals.",
@@ -354,5 +490,5 @@
     "Cut back on added sugars and sodium",
     "Don't skip meals, aim to eat every 3-4 hours",
     "Find a supportive friend or family member to help you on your weight loss journey"
-    ]
+  ]
 }
