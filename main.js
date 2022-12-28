@@ -201,19 +201,20 @@ function showToday_sSchedule() {
 function loadData() {
   const schedule = ShapeTracker.schedule;
   const randomIndex = Math.floor(Math.random() * schedule.advice.length);
-  const randomAdvice = schedule.advice[randomIndex];
-  console.log(randomAdvice)
   
   const adviceDiv = document.getElementById("advise-div");
   const advicecontentDiv = document.getElementById("advise-content");
   
   const centerPanel = document.getElementById("center-panel");
   const closeButton = document.getElementById("close-button");
-  advicecontentDiv.innerHTML = randomAdvice
-  closeButton.addEventListener("click", () => {
-      console.log("Removing advise")
-      adviceDiv.remove();
-    });
+  if(adviceDiv){
+    const randomAdvice = schedule.advice[randomIndex];
+    advicecontentDiv.innerHTML = randomAdvice
+    closeButton.addEventListener("click", () => {
+        console.log("Removing advise")
+        adviceDiv.remove();
+      });  
+  }
     
 
   const birthDate = ShapeTracker.birthdate;
