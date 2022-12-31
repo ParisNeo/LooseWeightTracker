@@ -10,6 +10,7 @@
     <div id="top-banner"></div>
     <ul>
       <li><a href="#" id="today" onclick="showToday_sSchedule()">Today's Schedule</a></li>
+      <li><a href="#" id="update-schedule" onclick="showUpdateSchedulePage()">Update Schedule</a></li>
       <li><a href="#" id="add">Add Weight</a></li>
       <li><a href="#" id="progress">View Progress</a></li>
       <li>
@@ -32,6 +33,30 @@
       <dev id="content"></dev>
 
     </div>
+    <div id="update-schedule-page" style="display: none">
+      <form>
+        <label for="start-time">Start Time:</label><br>
+        <input type="time" id="start-time" name="start-time"><br>
+        <label for="end-time">End Time:</label><br>
+        <input type="time" id="end-time" name="end-time"><br>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description"></textarea><br>
+        <label for="type">Type:</label><br>
+        <select id="type" name="type">
+          <option value="meal">Meal</option>
+          <option value="activity">Activity</option>
+          <option value="sleep">Sleep</option>
+        </select><br>
+        <button type="button" onclick="addScheduleItem()">Add</button>
+        <button type="button" onclick="removeScheduleItem()">Remove</button>
+        <button type="button" onclick="saveUpdatedSchedule()">Save</button>
+        <div id=schedule-rows></div>
+      </form>
+      <ul id="schedule-list"></ul>
+    </div>
+
 
     <!-- Add page content -->
     <div id="add-page" style="display:none;" style="display: none">

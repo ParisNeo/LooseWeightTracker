@@ -70,31 +70,39 @@ function convertTimeStringToDate(timeString) {
 */
   function prepare_items(currentDaySchedule){
     const items = [];
+    let index = 0;
     for (const activity of currentDaySchedule.activity) {
         items.push({
           type: 'activity',
+          index: index,
           name: activity.name,
           start_time: activity.start_time,
           end_time: activity.end_time
         });
-      }
-      
-    for (const meal of currentDaySchedule.meals) {
-    items.push({
-        type: 'meal',
-        name: meal.name,
-        start_time: meal.start_time,
-        end_time: meal.end_time
-    });
+        index ++;
+    }
+    index = 0;
+    for (const meal of currentDaySchedule.meal) {
+      items.push({
+          type: 'meal',
+          index: index,
+          name: meal.name,
+          start_time: meal.start_time,
+          end_time: meal.end_time
+      });
+      index ++;
     }
     
+    index = 0;
     for (const sleep of currentDaySchedule.sleep) {
-    items.push({
-        type: 'sleep',
-        name: 'Sleep',
-        start_time: sleep.start_time,
-        end_time: sleep.end_time
-    });
+      items.push({
+          type: 'sleep',
+          index: index,
+          name: 'Sleep',
+          start_time: sleep.start_time,
+          end_time: sleep.end_time
+      });
+      index++;
     }
     console.log(items)
     
@@ -176,7 +184,89 @@ function renderRow(item) {
   rowHTML += '</div>';
   return rowHTML;
 }
+/**
+ * Deletes the specified row from the schedule table.
+ * @param {number} item - The item corresponding to the row to delete.
+ */
+function deleteItem(type, index) {
+  index = parseInt(index)
+  console.log("here");
+  console.log(`removing item ${index} of type ${type}`);
+  // Get the current day's schedule from the ShapeTracker object
+  const ShapeTracker = JSON.parse(localStorage.getItem("ShapeTracker"));
+  const dayIndex = ShapeTracker.schedule.days.findIndex(day => day.day === findTodayName());
+  const currentDaySchedule = ShapeTracker.schedule.days[dayIndex];
+  console.log(currentDaySchedule);
+  // Use the delete operator or splice method to remove the item from the property
+  console.log(`removing item ${index} of type ${type} wcontaining: ${currentDaySchedule[type][index]}`);
+  // Use the splice method to remove the item from the property
+  ShapeTracker.schedule.days[dayIndex][type].splice(index, 1);
 
+  // get items from the schedule
+  items = prepare_items( ShapeTracker.schedule.days[dayIndex]);
+  // Render the table        
+  renderTable(items);
+  // Save it all
+  console.log(ShapeTracker);
+  localStorage.setItem("ShapeTracker", JSON.stringify(ShapeTracker));
+}
+
+function renderRow(item) {
+  // Calculate the duration of the item in minutes
+  const duration = calculateDuration(item.start_time, item.end_time);
+  const currentTime = new Date();
+  const startTime = convertTimeStringToDate(item.start_time);
+  const endTime = convertTimeStringToDate(item.end_time);
+  if (endTime - startTime < 0) {
+    endTime.setDate(endTime.getDate() + 1);
+  }
+  let rowHTML = '';
+
+  // Set the class of the row based on the type of the item
+  if (currentTime >= startTime && currentTime <= endTime) {
+    rowHTML += '<div class="hilighted-row">';
+  } else if (item.type === 'activity') {
+    rowHTML += '<div class="activity-row">';
+  } else if (item.type === 'meal') {
+    rowHTML += '<div class="meal-row">';
+  } else if (item.type === 'free time') {
+    rowHTML += '<div class="free-row">';
+  } else if (item.type === 'sleep') {
+    rowHTML += '<div class="sleep-row">';
+  }
+
+  // Set the height of the row based on the duration
+  rowHTML += `<div class="name-cell" style="height: ${duration+150}px;" contenteditable>${item.name}</div>`;
+
+  // Add the time cell
+  rowHTML += `<div class="time-cell" style="height: ${duration+150}px;">
+                <div class="time-row start-time" contenteditable>${item.start_time}</div>
+                <div class="time-row duration">${duration} minutes</div>
+                <div class="time-row end-time" contenteditable>${item.end_time}</div>
+              </div>`;
+
+  // Add the edit and delete buttons to the row
+  rowHTML += `
+    <div class="edit-button">
+      <button type="button" onclick="editItem('${item.type}',${item.index})">Edit</button>
+    </div>
+    <div class="delete-button">
+      <button type="button" onclick="deleteItem('${item.type}',${item.index})">Delete</button>
+    </div>
+    `;
+
+  // Close the row div
+  rowHTML += '</div>';
+
+  return rowHTML;
+}
+
+function findTodayName(){
+  const today = new Date().getDay();
+  const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const todayName = dayNames[today];
+  return todayName
+}
 
 function showToday_sSchedule() {
   const content = document.getElementById("content");
@@ -337,6 +427,55 @@ function importData() {
   localStorage.setItem("ShapeTracker", JSON.stringify(importedData));
   loadData();
   };
+}
+
+function showUpdateSchedulePage() {
+  // Hide other pages
+  document.getElementById("schedule-page").style.display = "none";
+  document.getElementById("add-page").style.display = "none";
+  document.getElementById("progress-page").style.display = "none";
+  document.getElementById("export-page").style.display = "none";
+  document.getElementById("import-page").style.display = "none";
+
+  // Show update schedule page
+  const updateSchedulePage = document.getElementById("update-schedule-page");
+  updateSchedulePage.style.display = "block";
+
+  // Populate the update schedule page with the current schedule data
+  const ShapeTracker = JSON.parse(localStorage.getItem("ShapeTracker"));
+  const schedule = ShapeTracker.schedule.days.find(day => day.day === findTodayName());
+  console.log(schedule);
+
+  // Clear the existing schedule rows
+  const scheduleRows = document.getElementById("schedule-rows");
+  scheduleRows.innerHTML = "";
+
+  // Add a row for each schedule entry
+  for (const entry of schedule.meal) {
+    const row = document.createElement("tr");
+
+    // Add a cell for the entry name
+    const nameCell = document.createElement("td");
+    nameCell.innerHTML = `<input type="text" value="${entry.name}"/>`;
+    row.appendChild(nameCell);
+
+    // Add a cell for the entry start time
+    const startTimeCell = document.createElement("td");
+    startTimeCell.innerHTML = `<input type="time" value="${entry.start_time}"/>`;
+    row.appendChild(startTimeCell);
+
+    // Add a cell for the entry end time
+    const endTimeCell = document.createElement("td");
+    endTimeCell.innerHTML = `<input type="time" value="${entry.end_time}"/>`;
+    row.appendChild(endTimeCell);
+
+    // Add a cell for the delete button
+    const deleteCell = document.createElement("td");
+    deleteCell.innerHTML = `<button type="button" onclick="deleteScheduleEntry(this)">Delete</button>`;
+    row.appendChild(deleteCell);
+
+    scheduleRows.appendChild(row);
+  }
 }
 /**
 

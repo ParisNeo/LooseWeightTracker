@@ -174,7 +174,7 @@
   "days": [
     {
       "day": "Monday",
-      "meals": [
+      "meal": [
         {
           "name": "Breakfast",
           "start_time": "07:00",
@@ -212,7 +212,7 @@
     },
     {
       "day": "Tuesday",
-      "meals": [
+      "meal": [
         {
           "name": "Breakfast",
           "start_time": "07:00",
@@ -250,7 +250,7 @@
     },
     {
       "day": "Wednesday",
-      "meals": [
+      "meal": [
         {
           "name": "Breakfast",
           "start_time": "07:00",
@@ -288,7 +288,7 @@
     },
     {
       "day": "Thursday",
-      "meals": [
+      "meal": [
         {
           "name": "Breakfast",
           "start_time": "07:00",
@@ -326,7 +326,7 @@
     },
     {
       "day": "Friday",
-      "meals": [
+      "meal": [
         {
           "name": "Breakfast",
           "start_time": "07:00",
@@ -364,7 +364,7 @@
     },
     {
       "day": "Saturday",
-      "meals": [
+      "meal": [
         {
           "name": "Breakfast",
           "start_time": "07:00",
@@ -402,7 +402,7 @@
     },
     {
       "day": "Sunday",
-      "meals": [
+      "meal": [
         {
           "name": "Breakfast",
           "start_time": "07:00",
@@ -447,7 +447,7 @@
     "Get enough sleep each night to support healthy weight loss and overall well-being.",
     "Choose whole grains over refined grains for added nutrients and fiber.",
     "Limit your intake of sugary drinks and snacks to reduce your overall calorie intake.",
-    "Plan your meals and snacks in advance to stay on track and avoid impulsive eating.",
+    "Plan your meal and snacks in advance to stay on track and avoid impulsive eating.",
     "Choose healthier cooking methods, such as grilling, baking, or roasting, instead of deep frying.",
     "Get support from friends, family, or a healthcare professional to help you stay motivated and on track.",
     "Stay hydrated by drinking at least 8 glasses of water per day",
@@ -469,11 +469,11 @@
     "Exercise regularly: Regular physical activity can help you burn calories and maintain a healthy weight. Aim for at least 150 minutes of moderate intensity exercise per week.",
     "Eat healthy fats: Healthy fats like olive oil, avocado, and nuts can help keep you feeling full and satisfied, and may even help with weight loss. Just be sure to keep your portions in check.",
     "Keep track of your progress: Using a food diary or tracking app can help you stay on track with your weight loss goals. Regularly checking in can help you stay motivated and make any necessary adjustments.",
-    "Don't skip meals: Skipping meals can lead to overeating later in the day, making it harder to stick to your weight loss goals. Aim to eat regular, balanced meals throughout the day.",
+    "Don't skip meal: Skipping meal can lead to overeating later in the day, making it harder to stick to your weight loss goals. Aim to eat regular, balanced meal throughout the day.",
     "Track your food intake using a food diary or app. This will help you understand your eating habits and make necessary changes.",
-    "Plan your meals in advance. This will help you make healthier choices and avoid impulse eating.",
+    "Plan your meal in advance. This will help you make healthier choices and avoid impulse eating.",
     "Choose foods that are high in fiber and protein. These nutrients will help keep you feeling fuller for longer and help you reach your weight loss goals.",
-    "Don't skip meals. Skipping meals can cause you to overeat later in the day and make it harder to reach your weight loss goals.",
+    "Don't skip meal. Skipping meal can cause you to overeat later in the day and make it harder to reach your weight loss goals.",
     "Get enough sleep. Lack of sleep can lead to weight gain and make it harder to lose weight.",
     "Drink plenty of water. Water can help fill you up and flush out toxins.",
     "Find a form of physical activity that you enjoy. This will make it easier to stick to an exercise routine.",
@@ -482,13 +482,13 @@
     "Be patient. Weight loss takes time and consistency. Don't get discouraged if you don't see immediate results.",
     "Drink plenty of water throughout the day",
     "Make sure to get at least 7-9 hours of sleep each night",
-    "Try to incorporate more vegetables into your meals",
+    "Try to incorporate more vegetables into your meal",
     "Choose whole grains over refined grains",
     "Get moving! Incorporate physical activity into your daily routine",
-    "Use smaller plates to portion your meals",
+    "Use smaller plates to portion your meal",
     "Eat slowly and mindfully",
     "Cut back on added sugars and sodium",
-    "Don't skip meals, aim to eat every 3-4 hours",
+    "Don't skip meal, aim to eat every 3-4 hours",
     "Find a supportive friend or family member to help you on your weight loss journey"
   ]
 }

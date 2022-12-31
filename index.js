@@ -123,5 +123,26 @@ if (ShapeTracker) {
 
   });
 
+  // Import data from a JSON file
+  function importData() {
+    // Get the file input element and file object
+    const fileInput = document.getElementById("file-input");
+    fileInput.click();
+    const file = fileInput.files[0];
+
+    // Create a FileReader to read the file as a text string
+    const reader = new FileReader();
+    reader.readAsText(file);
+
+    // When the file has been read, update the ShapeTracker object with the imported data
+    reader.onload = function() {
+    const importedData = JSON.parse(reader.result);
+    localStorage.setItem("ShapeTracker", JSON.stringify(importedData));
+    loadData();
+    };
+  }
 }
+
+
+
 
